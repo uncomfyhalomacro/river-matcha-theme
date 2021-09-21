@@ -4,7 +4,7 @@
 mod="Mod4"
 
 # Set your terminal emulator - foot
-term=$HOME/.local/bin/footq
+term=foot
 
 # App Bindings
 riverctl map normal $mod I spawn firefox
