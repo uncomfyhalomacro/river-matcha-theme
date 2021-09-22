@@ -29,10 +29,6 @@ if [[ $answer == "y" ]] || [[ $answer == "Y" ]]; then
     cp $SCRIPT_DIR/mygrimshot.sh $HOME/.local/bin -fv
     cp $SCRIPT_DIR/wayriver.sh $HOME/wayriver.sh -fv
     echo "Done copying configs"
-
-    echo "Now replacing paths using host username: $USER"
-    sleep 2s
-	sed -i 's/uncomfy/'"${USER}"'/g' $HOME/.config/yambar/config.yml
     echo "DONE"
 else
     echo "Aborted"
