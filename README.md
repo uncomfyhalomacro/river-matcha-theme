@@ -18,3 +18,5 @@ You must have the following software in order to make this work:
 - [mako](https://github.com/emersion/mako) (a notification daemon for wayland)
 - [foot](https://codeberg.org/dnkl/foot) (a native wayland terminal emulator)
 - [fuzzel](https://codeberg.org/dnkl/fuzzel) (a rofi inspired application launcher)
+- [Matcha-gtk-theme] (https://github.com/vinceliuice/Matcha-gtk-theme)
+- A nerd font like Hack Nerd Font
