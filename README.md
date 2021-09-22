@@ -20,3 +20,9 @@ You must have the following software in order to make this work:
 - [fuzzel](https://codeberg.org/dnkl/fuzzel) (a rofi inspired application launcher)
 - [Matcha-gtk-theme] (https://github.com/vinceliuice/Matcha-gtk-theme)
 - A nerd font like Hack Nerd Font
+
+## Preview
+
+![Image](https://github.com/uncomfyhalomacro/river-matcha-theme/blob/main/screenshots/screenshot-03.png)
+![Image](https://github.com/uncomfyhalomacro/river-matcha-theme/blob/main/screenshots/screenshot-0.png)
+![Image](https://github.com/uncomfyhalomacro/river-matcha-theme/blob/main/screenshots/screenshot-01.png)
