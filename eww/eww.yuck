@@ -43,7 +43,9 @@
 		:space-evenly false
 		:class "zypper-box"
 	(label :text " " :class "opensuse-logo")
-	zypper-updates))
+	(metric :label ""
+        :value zypper-updates
+        :onchange "")))
 
 (defwidget spotify[]
 	(box
