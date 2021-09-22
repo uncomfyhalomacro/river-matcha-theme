@@ -24,5 +24,5 @@ You must have the following software in order to make this work:
 ## Preview
 
 ![Image](https://github.com/uncomfyhalomacro/river-matcha-theme/blob/main/screenshots/screenshot-03.png)
-![Image](https://github.com/uncomfyhalomacro/river-matcha-theme/blob/main/screenshots/screenshot-0.png)
+![Image](https://github.com/uncomfyhalomacro/river-matcha-theme/blob/main/screenshots/screenshot-02.png)
 ![Image](https://github.com/uncomfyhalomacro/river-matcha-theme/blob/main/screenshots/screenshot-01.png)
