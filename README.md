@@ -1,4 +1,4 @@
-# river-matcha-theme [WIP]
+# river-matcha-theme
 
 A sample configuration and theme for [river](https://github.com/ifreund/river), a tiling window manager for wlroots based Wayland compositors written in [Zig](https://github.com/ziglang/zig/).
 
