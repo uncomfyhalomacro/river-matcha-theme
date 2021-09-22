@@ -12,8 +12,3 @@ riverctl send-layout-cmd stacktile "secondary_sublayout rows"
 riverctl send-layout-cmd stacktile "secondary_count 3"
 riverctl send-layout-cmd stacktile "secondary_ratio 0.5"
 riverctl send-layout-cmd stacktile "remainder_sublayout stack"
-# Borders
-riverctl border-color-focused 0xd4be98
-riverctl border-color-unfocused 0x92a58b
-riverctl border-width 2
-riverctl background-color 0x282828
