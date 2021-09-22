@@ -52,7 +52,7 @@
 		:onscroll "./scripts/spotify-next-previous.sh {}" 
 	(button
 		:onclick "./scripts/spotify-open.sh && playerctl -p spotify play-pause" :class "spotify-button"
-	(label :text "${spotify-status}" :class "spotify-text" )))))
+	(label :limit-width 80 :text {spotify-status ?: " ${title}"} :class "spotify-text" )))))
 
 (defwidget date[]
 	(box
