@@ -8,7 +8,7 @@
 (defpoll zypper-updates :interval "3600s" `./scripts/get_updates.sh`)
 (defpoll vol-info :interval "1s" `pamixer --get-volume`)
 (defpoll current-brightness :interval "1s" "light -G")
-(defpoll ping :interval "5s" "./scripts/get_ping.sh")
+(defpoll ping :interval "1s" "./scripts/get_ping.sh")
 
 (defwidget brightness[]
   (box
@@ -113,6 +113,8 @@
 
 
 (defwidget tag-indicator[]
+	(eventbox
+		:onscroll "./scripts/river-scroll.sh {} ${tags}"
 	(box
 		:orientation "h"
 		:halign "baseline"
@@ -162,7 +164,7 @@
 	(button
 		:onclick "riverctl set-focused-tags 1024"
 		:class {tags == "11" ? "tag-active" : "tag-inactive"}
-	(label :text ""))))
+	(label :text "")))))
 
 
 
