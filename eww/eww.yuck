@@ -72,10 +72,12 @@
 
 (defwidget start[]
 	(box
+		:halign "start"
 		(tag-indicator)))
 
 (defwidget center[]
 	(box
+		:halign "center"
 		(spotify)))
 
 (defwidget side[]
@@ -125,13 +127,14 @@
 
 
 (defwidget tag-indicator[]
+	(box 
+		:orientation "h"
+		:halign "start"
+		:class "tag-indicator-box"
 	(eventbox
 		:onscroll "./scripts/river-scroll.sh {} ${tags}"
 	(box
-		:orientation "h"
-		:halign "start"
-		:space-evenly "false"
-		:class "tag-indicator-box"
+		:space-evenly "true"
 		:spacing 15
 	(button
 		:onclick "riverctl set-focused-tags 1"
@@ -176,13 +179,12 @@
 	(button
 		:onclick "riverctl set-focused-tags 1024"
 		:class {tags == "11" ? "tag-active" : "tag-inactive"}
-	(label :text "")))))
+	(label :text ""))))))
 
 
 
 (defwidget river-bar[]
-	(centerbox
-		:spacing 0
+	(centerbox :orientation "h"
 	(start)
 	(center)
 	(side)))

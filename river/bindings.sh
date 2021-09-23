@@ -4,12 +4,12 @@
 mod="Mod4"
 
 # Set your terminal emulator - foot
-term=foot
+term=$HOME/.local/bin/footq
 
 # App Bindings
 riverctl map normal $mod I spawn firefox
 riverctl map normal $mod O spawn brave-browser
-riverctl map normal $mod U spawn "fuzzel -i Papirus -f 'Hasklug Nerd Font' --background=d4be98cc -t 3c3836ff -w 60 --selection-color d79921ff --selection-text-color 3c3836ff -T $term"
+riverctl map normal $mod U spawn "wofi -I --show drun --prompt=Applications --height=750 --width=600 --term=$tem"
 
 # Screenshot scripts
 riverctl map normal "None" Print spawn $HOME/.local/bin/mygrimshot.sh
@@ -132,6 +132,13 @@ riverctl map normal $mod+Shift W spawn "riverctl set-view-tags 1024; riverctl se
 riverctl map normal $mod+Control W toggle-focused-tags 1024
 riverctl map normal $mod+Shift+Control W toggle-view-tags 1024
 
+# One private tag not listed
+
+riverctl map normal $mod P set-focused-tags 2048
+riverctl map normal $mod+Shift P spawn "riverctl set-view-tags 2048; riverctl set-focused-tags 2048"
+riverctl map normal $mod+Control P toggle-focused-tags 2048
+riverctl map normal $mod+Shift+Control P toggle-view-tags 2048
+
 # Mod+0 to focus all tags
 # Mod+Shift+0 to tag focused view with all tags
 all_tags=$(((1 << 32) - 1))
@@ -176,8 +183,8 @@ riverctl map normal None XF86AudioPrev  spawn 'playerctl -p spotify previous'
 riverctl map normal None XF86AudioNext  spawn 'playerctl -p spotify next'
 
 # Control screen backlight brighness with light (https://github.com/haikarainen/light)
-riverctl map normal None XF86MonBrightnessUp   spawn 'brightnessctl s +1%'
-riverctl map normal None XF86MonBrightnessDown spawn 'brightnessctl s 1%-'
+riverctl map normal None XF86MonBrightnessUp   spawn 'light -A 5%'
+riverctl map normal None XF86MonBrightnessDown spawn 'light -U 5%'
 
 # Set repeat rate
 riverctl set-repeat 50 300

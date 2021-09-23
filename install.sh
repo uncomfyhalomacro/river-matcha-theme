@@ -8,7 +8,7 @@ if [[ $answer == "y" ]] || [[ $answer == "Y" ]]; then
 
     SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-    for i in {river,mako,eww,foot}; do
+    for i in {river,mako,eww,foot,wofi}; do
         CONF_DIR="$HOME/.config/$i"
         if [ -d  $CONF_DIR ]; then
             echo "Found configuration for $i"
