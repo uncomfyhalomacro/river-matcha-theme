@@ -19,6 +19,7 @@ You must have the following software in order to make this work:
 - [foot](https://codeberg.org/dnkl/foot) (a native wayland terminal emulator)
 - [fuzzel](https://codeberg.org/dnkl/fuzzel) (a rofi inspired application launcher)
 - [Matcha-gtk-theme] (https://github.com/vinceliuice/Matcha-gtk-theme)
+- [wofi](https://hg.sr.ht/~scoopta/wofi) (rofi clone for wayland - unmaintained as of the moment but still going to use it)
 - A nerd font like Hack Nerd Font
 
 ## Preview
