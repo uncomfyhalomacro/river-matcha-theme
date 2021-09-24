@@ -55,7 +55,7 @@
 		:onscroll "./scripts/spotify-next-previous.sh {}" 
 	(button
 		:onclick "./scripts/spotify-open.sh && playerctl -p spotify play-pause" :class "spotify-button"
-	(label :limit-width 80 :text {spotify-status ?: ""} :class "spotify-text" )))))
+	(label :limit-width 80 :text "${tags == "12" ? "Hidden Tag: " : ""}${spotify-status ?: ""}" :class "spotify-text" )))))
 
 (defwidget date[]
 	(box
@@ -70,13 +70,9 @@
 		day)
 	time))
 
-(defwidget start[]
-	(box
-		:halign "start"
-		(tag-indicator)))
-
 (defwidget center[]
 	(box
+		:orientation "h"
 		:halign "center"
 		(spotify)))
 
@@ -125,6 +121,10 @@
 		:space-evenly "false"
 	(label :limit-width "40" :text {title ?: " "})))
 
+(defwidget start[]
+	(box
+		:class "start-box"
+	(curwindow)))
 
 (defwidget tag-indicator[]
 	(box 
@@ -194,9 +194,77 @@
 	:exclusive "true"
 	:focusable "false"
 	:stacking "bottom"
-	:geometry (geometry :x "0%"
-				  :y "0"
-				  :width "100%"
-				  :height "15px"
+	:geometry (geometry :x "0"
+				  :y "10"
+				  :width "80%"
 				  :anchor "top center")
 	(river-bar))
+
+(defwidget tag-indicator-v[]
+	(box 
+		:orientation "v"
+		:halign "start"
+		:class "tag-indicator-box"
+	(eventbox
+		:onscroll "./scripts/river-scroll.sh {} ${tags}"
+		:orientation "v"
+	(box
+		:space-evenly "true"
+		:orientation "v"
+		:spacing 5
+	(button
+		:onclick "riverctl set-focused-tags 1"
+		:class {tags == "1" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "1" ? "" : ""}))
+	(button
+		:onclick "riverctl set-focused-tags 2"
+		:class {tags == "2" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "2" ? "" : ""}))
+	(button
+		:onclick "riverctl set-focused-tags 4"
+		:class {tags == "3" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "3" ? "" : ""}))
+	(button
+		:onclick "riverctl set-focused-tags 8"
+		:class {tags == "4" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "4" ? "" : ""}))
+	(button
+		:onclick "riverctl set-focused-tags 16"
+		:class {tags == "5" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "5" ? "" : ""}))
+	(button
+		:onclick "riverctl set-focused-tags 32"
+		:class {tags == "6" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "6" ? "" : ""}))
+	(button
+		:onclick "riverctl set-focused-tags 64"
+		:class {tags == "7" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "7" ? "" : ""}))
+	(button
+		:onclick "riverctl set-focused-tags 128"
+		:class {tags == "8" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "8" ? "" : ""}))
+	(button
+		:onclick "riverctl set-focused-tags 256"
+		:class {tags == "9" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "9" ? "" : ""}))
+	(button
+		:onclick "riverctl set-focused-tags 512"
+		:class {tags == "10" ? "tag-active" : "tag-inactive"}
+	(label :text "ﴬ"))
+	(button
+		:onclick "riverctl set-focused-tags 1024"
+		:class {tags == "11" ? "tag-active" : "tag-inactive"}
+	(label :text ""))))))
+
+(defwindow river-bar-vertical
+	:monitor 0
+	:exclusive "true"
+	:focusable "false"
+	:stacking "bottom"
+	:geometry (geometry :x "12"
+				  :y "0"
+				  :width "20px"
+				  :height "50%"
+				  :anchor "left center")
+	(tag-indicator-v))

@@ -15,7 +15,7 @@ riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG
 riverctl map normal "Mod4" R spawn $HOME/.config/river/init
 
 # Setting some startup stuff
-riverctl spawn "river-tag-overlay --background-colour 0x1d2021 --border-colour 0xa9b665 --square-active-occupied-colour 0xd79921 --square-active-background-colour 0xa9b665 --square-active-border-colour 0xd4be98 --tag-amount 11"
+riverctl spawn "river-tag-overlay --background-colour 0x1d2021 --border-colour 0xa9b665 --square-active-occupied-colour 0x36494F --square-active-background-colour 0xa9b665 --square-active-border-colour 0xd4be98 --tag-amount 11"
 riverctl spawn "wlsunset -l 8.17 -L 123.80"
 riverctl spawn $HOME/.config/river/wlsunset.sh
 riverctl spawn $HOME/.config/mako/mako.sh
