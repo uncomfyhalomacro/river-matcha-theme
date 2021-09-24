@@ -47,7 +47,6 @@
 	(metric :label ""
         :value zypper-updates
         :onchange "")))
-
 (defwidget spotify[]
 	(box
 		:halign "center"
@@ -56,7 +55,7 @@
 		:onscroll "./scripts/spotify-next-previous.sh {}" 
 	(button
 		:onclick "./scripts/spotify-open.sh && playerctl -p spotify play-pause" :class "spotify-button"
-	(label :limit-width 80 :text "${tags == "12" ? "Hidden Tag: " : ""}${spotify-status ?: ""}" :class "spotify-text" )))))
+	(label :limit-width 80 :text {tags == "12" ? "Hidden Tag | ${spotify-status ?: "${title ?: " "}"}" : "${spotify-status ?: "${title ?: " "}"}"} :class {spotify-status != "" ? "spotify-text" : "title-text"} )))))
 
 (defwidget date[]
 	(box
@@ -82,7 +81,7 @@
 		:halign "end"
 		:space-evenly "false"
 		:class "side-box"
-		:spacing 8
+		:spacing 15
 	(box
 		:class "network-text"
 	(metric :label "${network}"
@@ -185,7 +184,7 @@
 
 
 (defwidget river-bar[]
-	(box :orientation "h" :soace-evenly true
+	(box :orientation "h" :space-evenly true
 	(center)
 	(side)))
 

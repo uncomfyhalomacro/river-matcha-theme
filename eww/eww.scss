@@ -26,7 +26,7 @@
     color: #E78A4E;
 }
 
-.current-window {
+.title-text {
 	all: unset;
     //margin-right: 10px;
 	font-weight: bold;
@@ -42,38 +42,39 @@
     color: #303030;
 	padding: 5px;
 	background-color: #779414;
-	font-size: 15px;
+	font-size: 12px;
 }
 
 .zypper-box {
 	color: #81c13b;
-	font-size: 43px;
+	font-size: 28px;
 	font-family: "Font Awesome 5 Brands Regular";
 	padding-right: 2px;
 }
 
 .spotify-text {
 	color: #1DB954;
-	font-size: 15px;
+	font-size: 12px;
+	font-family: "Hack Nerd Font";
 	//padding-right: 250px;
 }
 
 .volume-box {
 	color: #acce31;
 	padding: 0px;
-	font-size: 25px;
+	font-size: 12px;
 	font-family: "Font Awesome 5 Brands Regular";
 }
 .network-text {
 	color:  #708ff4;
 	font-family: "Font Awesome 5 Brands Regular";
-	font-size: 30px;
+	font-size: 14px;
 }
 
 .brightness {
 	color: #e8de5c;
 	font-family: "Font Awesome 5 Brands Regular";
-	font-size: 25px;
+	font-size: 12px;
 }
 
 .metric scale trough highlight {
@@ -87,7 +88,7 @@
   background-color: #4e4e4e;
   border-radius: 50px;
   min-height: 3px;
-  min-width: 50px;
+  min-width: 60px;
 }
 .metric scale trough highlight {
   all: unset;
@@ -100,30 +101,30 @@
   background-color: #4e4e4e;
   border-radius: 50px;
   min-height: 3px;
-  min-width: 50px;
+  min-width: 60px;
   margin-left: 3px;
 }
 
 .ram {
  	color: #e2a936;
 	font-family: "Font Awesome 5 Brands Regular";
-	font-size: 30px;
+	font-size: 16px;
 }
 
 .storage {
 	color: #d55ce8;
 	font-family: "Font Awesome 5 Brands Regular";
-	font-size: 25px;
+	font-size: 16px;
 }
 
 .battery {
 	color: #53c12e;
 	font-family: "Font Awesome 5 Brands Regular";
-	font-size: 15px;
+	font-size: 12px;
 }
 
 .cpu {
 	color: #ba9377;
-	font-size: 30px;
+	font-size: 16px;
 	font-family: "Font Awesome 5 Brands Regular";
 }
