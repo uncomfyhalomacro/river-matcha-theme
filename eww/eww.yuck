@@ -51,6 +51,7 @@
 (defwidget spotify[]
 	(box
 		:halign "center"
+		:orientation "h"
 	(eventbox
 		:onscroll "./scripts/spotify-next-previous.sh {}" 
 	(button
@@ -195,7 +196,7 @@
 	:focusable "false"
 	:stacking "bottom"
 	:geometry (geometry :x "0"
-				  :y "10"
+				  :y "0"
 				  :width "80%"
 				  :anchor "top center")
 	(river-bar))
@@ -262,9 +263,9 @@
 	:exclusive "true"
 	:focusable "false"
 	:stacking "bottom"
-	:geometry (geometry :x "12"
+	:geometry (geometry :x "0"
 				  :y "0"
 				  :width "20px"
 				  :height "50%"
-				  :anchor "left center")
+				  :anchor "right center")
 	(tag-indicator-v))

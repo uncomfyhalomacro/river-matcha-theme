@@ -16,7 +16,7 @@ done
 nextag=$(echo "$curtag + 1" | bc -l)
 prevtag=$(echo "$curtag - 1" | bc -l)
 
-if [ $cmd == "up" ]
+if [ $cmd == "down" ]
 then
     if [[ $nextag -gt 10 ]]
     then
@@ -24,7 +24,7 @@ then
     else
         riverctl set-focused-tags ${list_tags[$nextag]}
     fi
-elif [ $cmd == "down" ]
+elif [ $cmd == "up" ]
 then
     if [[ $curtag -lt 0 ]]
     then
