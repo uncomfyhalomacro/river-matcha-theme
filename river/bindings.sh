@@ -49,20 +49,27 @@ riverctl map normal $mod Return zoom
 # Mod+D switch layout to user-defined default
 riverctl map normal $mod D spawn $HOME/.config/river/default_layout.sh
 
+# Mod+G switch to layout master grid
+riverctl map normal $mod G spawn $HOME/.config/river/master_grid.sh
+
 # Mod+M switch to layout monocle
 riverctl map normal $mod M spawn $HOME/.config/river/monocle.sh
 
 # Mod+Shift+R user-defined default
 riverctl map normal $mod+Shift R send-layout-cmd stacktile "reset"
 
-# Mod+,
+# Mod+, switch to layour master stack
 riverctl map normal $mod comma spawn $HOME/.config/river/master_stack.sh
 
-# Mod+H and Mod+L to decrease/increase the main ratio of rivercarro
+# Mod+H and Mod+L to decrease/increase the main ratio of stacktile
 riverctl map normal $mod H send-layout-cmd stacktile "primary_ratio -0.05"
 riverctl map normal $mod L send-layout-cmd stacktile "primary_ratio +0.05"
 
-# Mod+Shift+H and Mod+Shift+L to increment/decrement the main_count value of rivertile.
+# Mod+H and Mod+L to decrease/increase the main ratio of stacktile
+riverctl map normal $mod+Control H send-layout-cmd stacktile "secondary_ratio -0.05"
+riverctl map normal $mod+Control L send-layout-cmd stacktile "secondary_ratio +0.05"
+
+# Mod+Shift+H and Mod+Shift+L to increment/decrement the main_count value of stacktile.
 riverctl map normal $mod+Shift H send-layout-cmd stacktile "primary_count -1"
 riverctl map normal $mod+Shift L send-layout-cmd stacktile "primary_count +1"
 
