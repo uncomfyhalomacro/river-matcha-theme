@@ -42,37 +42,38 @@
     color: #303030;
 	padding: 5px;
 	background-color: #779414;
-	font-size: 12px;
+	font-size: 15px;
 }
 
 .zypper-box {
 	color: #81c13b;
-	font-size: 12px;
+	font-size: 43px;
+	font-family: "Font Awesome 5 Brands Regular";
+	padding-right: 2px;
 }
 
 .spotify-text {
 	color: #1DB954;
-	font-size: 12px;
-	padding-right: 250px;
+	font-size: 15px;
+	//padding-right: 250px;
 }
 
-.opensuse-logo {
-	font-size: 18px;
-	padding-right: 2px;
-}
 .volume-box {
 	color: #acce31;
 	padding: 0px;
-	font-size: 12px;
+	font-size: 25px;
+	font-family: "Font Awesome 5 Brands Regular";
 }
 .network-text {
 	color:  #708ff4;
-	font-size: 12px;
+	font-family: "Font Awesome 5 Brands Regular";
+	font-size: 30px;
 }
 
 .brightness {
 	color: #e8de5c;
-	font-size: 12px;
+	font-family: "Font Awesome 5 Brands Regular";
+	font-size: 25px;
 }
 
 .metric scale trough highlight {
@@ -105,16 +106,24 @@
 
 .ram {
  	color: #e2a936;
+	font-family: "Font Awesome 5 Brands Regular";
+	font-size: 30px;
 }
 
 .storage {
 	color: #d55ce8;
+	font-family: "Font Awesome 5 Brands Regular";
+	font-size: 25px;
 }
 
 .battery {
 	color: #53c12e;
+	font-family: "Font Awesome 5 Brands Regular";
+	font-size: 15px;
 }
 
 .cpu {
 	color: #ba9377;
+	font-size: 30px;
+	font-family: "Font Awesome 5 Brands Regular";
 }

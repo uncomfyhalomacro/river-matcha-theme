@@ -14,4 +14,4 @@ else
 fi
 
 #echo "{\"text\": \""$network_active $interface_easyname\(${ping}ms\)"\"}" | jq .text -r --unbuffered
-echo "$network_active "
+echo "$network_active"

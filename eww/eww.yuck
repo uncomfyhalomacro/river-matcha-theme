@@ -34,7 +34,7 @@
 	(box
 		:halign "end"
 		:class "volume-box"
-	(metric :label " "
+	(metric :label ""
 		:value vol-info
 		:onchange "pamixer --set-volume {}")))
 
@@ -43,7 +43,7 @@
 		:halign "fill"
 		:space-evenly false
 		:class "zypper-box"
-	(label :text " " :class "opensuse-logo")
+	(label :text "" :class "opensuse-logo")
 	(metric :label ""
         :value zypper-updates
         :onchange "")))
@@ -92,23 +92,23 @@
 	(brightness)
 	(box
 		:class "ram"
-	(metric :label " "
+	(metric :label ""
             :value {EWW_RAM.used_mem_perc}
             :onchange ""))
 	(box
 		:class "storage"
-    (metric :label " "
+    (metric :label ""
             :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
             :onchange ""))
     (box
         :class "battery"
-    (metric :label " "
+    (metric :label ""
         :value  {EWW_BATTERY.BAT1.capacity}
         :onchange ""))
 	(box
 		:class "cpu"
 		:halign "end"
-	(metric :label " " 
+	(metric :label ""
 		:value cpu-avg
 		:onchange ""))
 	(zypper)
@@ -185,8 +185,7 @@
 
 
 (defwidget river-bar[]
-	(centerbox :orientation "h"
-	(start)
+	(box :orientation "h" :soace-evenly true
 	(center)
 	(side)))
 
