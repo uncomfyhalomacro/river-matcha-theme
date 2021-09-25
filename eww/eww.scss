@@ -8,11 +8,14 @@
     background: #202020;
 }
 
+.tag-indicator-box {
+	border: 2px solid #d2c26a;
+	padding: 15px 4px 10px 10px;
+    background: #202020;
+}
 
 .river-bar-vertical {
     font-family: "Hack Nerd Font";
-	padding: 2px 4px 2px 10px;
-    background: #202020;
 }
 .tag-inactive {
     font-size: 18px;
@@ -26,6 +29,42 @@
     color: #E78A4E;
 }
 
+
+.apps-box {
+	padding: 10px 10px 10px 5px;
+	border-top: 2px solid #d2c26a;
+	border-left: 2px solid #d2c26a;
+	border-right: 2px solid #d2c26a;
+	background-color: #202020;
+}
+
+.firefox-running {
+    font-size: 18px;
+    color: #FD4C39;
+}
+
+.firefox-running {
+    font-size: 18px;
+    color: #FD4C39;
+}
+.firefox-not-running {
+    font-size: 18px;
+    color: #8a9b94;
+}
+.discord-running {
+    font-size: 18px;
+    color: #5764F1;
+}
+
+.discord-not-running {
+    font-size: 18px;
+    color: #8a9b94;
+}
+
+.thunar {
+    font-size: 18px;
+    color: #a4ddf4;
+}
 .title-text {
 	all: unset;
     //margin-right: 10px;

@@ -10,7 +10,9 @@
 (defpoll current-brightness :interval "1s" "light -G")
 (defpoll ping :interval "1s" "./scripts/get_ping.sh")
 (deflisten cpu-avg "./scripts/get_cpu.sh 3")
-
+(defpoll discord-status :interval "1s" `if pgrep -x discord >/dev/null; then echo ""; else echo "discord-not-running"; fi`)
+(defpoll firefox-status :interval "1s" `if pgrep -x firefox >/dev/null; then echo ""; else echo "firefox-not-running"; fi`)
+(defpoll thunar-status :interval "1s" `if pgrep -x thunar >/dev/null; then echo ""; else echo "thunar-not-running"; fi`)
 (defwidget brightness[]
   (box
     :class "brightness"
@@ -181,6 +183,15 @@
 		:class {tags == "11" ? "tag-active" : "tag-inactive"}
 	(label :text ""))))))
 
+(defwidget discord[]
+	(box
+		:orientation "v"
+		:class "discord-box"
+	(button
+		:onclick "./scripts/discord-open.sh"
+		:onrightclick "flatpak kill com.discordapp.Discord & disown"
+	(label :text "ﭮ" :class {discord-status == "" ? "discord-running" : "${discord-status}"}))))
+
 
 
 (defwidget river-bar[]
@@ -199,18 +210,37 @@
 				  :anchor "top center")
 	(river-bar))
 
+(defwidget firefox[]
+	(box
+		:orientation "v"
+		:class "firefox-box"
+	(button
+		:onclick "/usr/bin/firefox & disown"
+		:onrightclick "pkill firefox"
+	(label :text "" :class {firefox-status == "" ? "firefox-running" : "${firefox-status}"}))))
+
+(defwidget thunar[]
+	(box
+		:orientation "v"
+		:class "thunar-box"
+	(button
+		:onclick "/usr/bin/thunar $HOME & disown"
+		:onrightclick "pkill thunar"
+	(label :text {thunar-status != "" ? "" : ""} :class "thunar" ))))
 (defwidget tag-indicator-v[]
 	(box 
 		:orientation "v"
-		:halign "start"
+		:halign "center"
 		:class "tag-indicator-box"
+		:space-evenly "false"
+		:spacing 15
 	(eventbox
 		:onscroll "./scripts/river-scroll.sh {} ${tags}"
 		:orientation "v"
 	(box
 		:space-evenly "true"
 		:orientation "v"
-		:spacing 5
+		:spacing 25
 	(button
 		:onclick "riverctl set-focused-tags 1"
 		:class {tags == "1" ? "tag-active" : "tag-inactive"}
@@ -254,7 +284,23 @@
 	(button
 		:onclick "riverctl set-focused-tags 1024"
 		:class {tags == "11" ? "tag-active" : "tag-inactive"}
-	(label :text ""))))))
+	(label :text ""))))))
+
+(defwidget apps[]
+	(box
+		:orientation "v"
+		:halign "baseline"
+		:space-evenly "false"
+		:class "apps-box"
+		:spacing 15
+	(thunar)
+	(firefox)
+	(discord)))
+
+(defwidget river-bar-vertical[]
+	(box :orientation "v" :space-evenly "false"
+		(apps)
+		(tag-indicator-v)))
 
 (defwindow river-bar-vertical
 	:monitor 0
@@ -264,6 +310,6 @@
 	:geometry (geometry :x "0"
 				  :y "0"
 				  :width "20px"
-				  :height "50%"
+				  :height "52%"
 				  :anchor "right center")
-	(tag-indicator-v))
+	(river-bar-vertical))
