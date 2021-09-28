@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
  
 cmd=$1
 curtag=$(echo "$2 - 1" | bc -l)

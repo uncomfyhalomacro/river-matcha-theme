@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo -e "This will remove your previous configuration assuming it is a symlink, are you sure? y - confirm; any letter - to abort"
 
@@ -31,7 +31,7 @@ if [[ $answer == "y" ]] || [[ $answer == "Y" ]]; then
             fi
         fi
     done
-    cp $SCRIPT_DIR/mygrimshot.sh $HOME/.local/bin -fv
+    cp $SCRIPT_DIR/mygrimshot.sh $HOME/.local/bin/ -fv
     cp $SCRIPT_DIR/wayriver.sh $HOME/wayriver.sh -fv
     echo "Done copying configs"
     echo "DONE"
